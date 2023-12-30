@@ -28,8 +28,8 @@
 #' result <- entropy.mcp.spearman.sampling(BETA, Rnoise)
 #'
 #' @details The function performs subsampling and uses the MCP method to estimate a sparse precision matrix (inverse covariance matrix) representing the genetic network. It uses Spearman's rank correlation to handle non-linear relationships and applies stability selection to enhance the reliability of the selected network.
-#' @importFrom stats eigen
-#' @importFrom Matrix diag
+#' @importFrom stats cor cov2cor median pchisq sd var
+#' @import glasso
 #' @export
 #'
 dtrace.mcp.spearman.sampling=function(BETA,Rnoise,lamvec=c(1:20)/100,max.eps=0.01,max.iter=25,rho=0.05,mineig=0.01,subtime=100,subfrac=0.5,subthres=0.95,alpha=0,reliability.thres=0.8,PenaMatrix="none"){
