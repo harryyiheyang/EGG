@@ -15,8 +15,10 @@ Ensure that you have the data.table and glasso packages installed as EGG depends
 ```
 install.packages(c("data.table", "glasso"))
 ```
-Example: Estimating the Genetic Network for 20 Traits in the EAS Population
+## Example: Estimating the Genetic Network for 20 Traits in the EAS Population
+
 This example demonstrates how to estimate the genetic network of 20 traits for the EAS population using publicly available GWAS summary data.
+
 Step 1: Import Packages and Load Data
 ```R
 library(igraph)
@@ -53,3 +55,10 @@ plot(gEUR, layout = layout.circle,
      vertex.frame.color = V(gEUR)$color,
      edge.width = 2, main = "Network estimate of EGG")
 ```
+## License
+
+This package is under the MIT License.
+
+## Contact
+
+For any questions or issues, please contact Yihe Yang at yxy1234@case.edu
