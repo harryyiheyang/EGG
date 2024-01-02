@@ -1,6 +1,10 @@
 # EGG: Estimating Genetic Gaussian Networks from GWAS Summary Data
 
-The EGG (Estimating Genetic Gaussian Networks) package is designed to estimate multiple variable Genetic Gaussian Networks using GWAS summary data. It utilizes advanced statistical methods to infer the genetic relationships and dependencies between different traits or variables, providing a comprehensive view of the genetic architecture. This package is particularly useful for researchers and geneticists looking to understand the complex interplay between multiple genetic factors.
+The EGG (Estimating Genetic Gaussian Networks) package is designed to estimate multiple variable Genetic Gaussian Networks using GWAS summary data. 
+
+It utilizes advanced statistical methods to infer the genetic relationships and dependencies between different traits or variables, providing a comprehensive view of the genetic architecture. 
+
+This package is particularly useful for researchers and geneticists looking to understand the complex interplay between multiple genetic factors.
 
 ## Installation
 
