@@ -1,0 +1,11 @@
+Dtrace=function(A,B){
+  fit=matrixEigen(A)
+  U=fit$vectors
+  D=fit$values
+  p=length(A[,1])
+  D1=rep(D,p);D1=matrix(D1,p,p)
+  C1=2/(D1+t(D1))
+  G=matrixListMultiply(list(t(U),B,U))*C1
+  E=matrixListMultiply(list(U,G,t(U)))
+  return(E)
+}
