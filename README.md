@@ -19,6 +19,10 @@ Ensure that you have the data.table and glasso packages installed as EGG depends
 ```
 install.packages(c("data.table", "glasso"))
 ```
+In particular, most matrix calculations in EGG package rely on CppMatrix Package, that convert the default function in R to C++ based functions:
+```
+devtools::install_github("harryyiheyang/CppMatrix")
+```
 ## Example: Estimating the Genetic Network for 20 Traits in the EAS Population
 
 This example demonstrates how to estimate the genetic network of 20 traits for the EAS population using publicly available GWAS summary data.
