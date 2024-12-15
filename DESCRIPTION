@@ -1,0 +1,19 @@
+Package: EGG
+Type: Package
+Title: Estimating Genetic Gaussian Networks from GWAS Summary Data
+Version: 0.1.0
+Author: Yihe Yang
+Maintainer: The package maintainer <yxy1234@case.edu>
+Description: The EGG (Estimating Genetic Gaussian Networks) package is designed for estimating multiple variable Genetic Gaussian Networks using GWAS summary data. It utilizes advanced statistical methods to infer the genetic relationships and dependencies between different traits or variables, providing a comprehensive view of the genetic architecture. This package is particularly useful for researchers and geneticists looking to understand the complex interplay between multiple genetic factors.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports:
+    data.table (>= 1.12.0),
+    glasso (>= 1.11),
+    CppMatrix,
+    igraph,
+    ggplot2,
+    ggraph,
+    RColorBrewer
+RoxygenNote: 7.3.1

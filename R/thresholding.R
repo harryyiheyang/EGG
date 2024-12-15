@@ -1,0 +1,25 @@
+SCADthreshold=function(S,lam,k=3){
+  d=sqrt(diag(S))
+  R=cov2cor(S)
+  s=as.vector(R)
+  s1=abs(s)
+  s2=scad(s1,lam)
+  s2=s2*sign(s)
+  S1=matrix(s2,ncol(S),ncol(S))
+  diag(S1)=1
+  S2=t(S1*d)*d
+  return(S2)
+}
+
+MCPthreshold=function(S,lam,ga=3){
+  d=sqrt(diag(S))
+  R=cov2cor(S)
+  s=as.vector(R)
+  s1=abs(s)
+  s2=mcp(s1,lam,ga)
+  s2=s2*sign(s)
+  S1=matrix(s2,ncol(S),ncol(S))
+  diag(S1)=1
+  S2=t(S1*d)*d
+  return(S2)
+}
