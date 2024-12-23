@@ -67,6 +67,10 @@ plot(gEUR, layout = layout.circle,
 
 This package is under the MIT License.
 
+## Reference 
+
+Yang Y, Lorincz-Comi N, Zhu X. Estimation of a genetic Gaussian network using GWAS summary data. Biometrics. 2024 Dec;80(4):ujae148. \url[Link]{https://academic.oup.com/biometrics/article-abstract/80/4/ujae148/7914826}.
+
 ## Contact
 
 For any questions or issues, please contact Yihe Yang at yxy1234@case.edu
