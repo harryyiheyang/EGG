@@ -24,7 +24,7 @@ matrixsqrt=function(A){
 entropyloss=function(A,B,eps=1e-8){
   C=matrixMultiply(A,B)
   a=trace(C)
-  b=eigen(C)$values
+  b=matrixEigen(C)$values
   b=Re(b)
   ind=which(b>eps)
   b=sum(log(b[ind]))
@@ -37,7 +37,7 @@ dtraceloss=function(A,B){
 }
 
 positiveadj=function(A,min.eps=0.001){
-  a=eigen(A)
+  a=matrixEigen(A)
   d=a$values
   d[d<min.eps]=0
   B=matrixMultiply(a$vector,(t(a$vector)*d))
