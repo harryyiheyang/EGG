@@ -11,9 +11,5 @@ LazyData: true
 Imports:
     data.table (>= 1.12.0),
     glasso (>= 1.11),
-    CppMatrix,
-    igraph,
-    ggplot2,
-    ggraph,
-    RColorBrewer
-RoxygenNote: 7.3.1
+    CppMatrix
+RoxygenNote: 7.3.2

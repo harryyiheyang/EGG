@@ -84,8 +84,8 @@ for(i in 1:length(lamvec)){
     error=norm(Theta-Theta1,"f")/sqrt(p)
   }
   df=(sum(Delta1!=0)-p)/2
-  subvecerror[i,j]=entropyloss(S2,Delta1)+(log(p*(p-1)/2)+log(m))/m*df*bic.factor
-  Thetalist[i,j,,]=Delta1
+  subvecerror[i,j]=entropyloss(S2,(Delta1!=0)*Theta)+(log(p*(p-1)/2)+log(m))/m*df*bic.factor
+  Thetalist[i,j,,]=(Delta1!=0)*Theta
 }
 }
 
@@ -126,7 +126,7 @@ if(iter %% 5==0 & min(matrixEigen(Theta)$values)<mineig){
 iter=iter+1
 error=norm(Theta-Theta1,"f")/sqrt(p)
 }
-Theta0=Delta1
+Theta0=(Delta1!=0)*Theta
 AA=EGG.subsampling.Pvalue(Theta0,Thetalist)
 Pvalue=AA$Pvalue
 ThetaSE=AA$SE

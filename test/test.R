@@ -1,5 +1,6 @@
 library(igraph)
 library(RColorBrewer)
+devtools::load_all()
 par(mfrow=c(2,3))
 data("EAS_Error_COV")
 data("EAS_Zscore")
