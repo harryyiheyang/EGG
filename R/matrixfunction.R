@@ -9,6 +9,7 @@ trace=function(A){
 }
 
 matrixsqrt=function(A){
+  A=t(A)/2+A/2
   fit=matrixEigen(A)
   d=fit$value
   d1=d*0
@@ -22,7 +23,10 @@ matrixsqrt=function(A){
 }
 
 entropyloss=function(A,B,eps=1e-8){
+  A=t(A)/2+A/2
+  B=t(B)/2+B/2
   C=matrixMultiply(A,B)
+  C=C/2+t(C)/2
   a=trace(C)
   b=matrixEigen(C)$values
   b=Re(b)
@@ -37,6 +41,7 @@ dtraceloss=function(A,B){
 }
 
 positiveadj=function(A,min.eps=0.001){
+  A=t(A)/2+A/2
   a=matrixEigen(A)
   d=a$values
   d[d<min.eps]=0
@@ -45,6 +50,7 @@ positiveadj=function(A,min.eps=0.001){
 }
 
 cov2cor1=function(A,kappa=100){
+  A=t(A)/2+A/2
   fit=matrixEigen(A)
   d=fit$values
   eps=max(d)/kappa

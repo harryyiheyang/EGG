@@ -36,6 +36,7 @@
 #' @export
 #'
 dtrace.mcp.spearman.sampling=function(BETA,Rnoise,lamvec=c(1:20)/100,max.eps=0.01,max.iter=25,rho=0.05,mineig=0.01,subtime=100,subfrac=0.5,subthres=0.95,alpha=0,bic.factor=0.5,reliability.thres=0.8,PenaMatrix="none"){
+BETA=as.matrix(BETA)
 m=dim(BETA)[1];p=dim(BETA)[2]
 alpha=alpha*rho
 Rnoise=reliability.adj(X=BETA,R=Rnoise,thres=reliability.thres)
@@ -84,7 +85,7 @@ for(i in 1:length(lamvec)){
     error=norm(Theta-Theta1,"f")/sqrt(p)
   }
   df=(sum(Delta1!=0)-p)/2
-  subvecerror[i,j]=entropyloss(S2,(Delta1!=0)*Theta)+(log(p*(p-1)/2)+log(m))/m*df*bic.factor
+  subvecerror[i,j]=entropyloss(S2,(Delta1!=0)*Theta)+(log(p*(p-1)/2)*bic.factor+log(m))/m*df
   Thetalist[i,j,,]=(Delta1!=0)*Theta
 }
 }
